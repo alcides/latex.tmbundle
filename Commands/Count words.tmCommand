@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>isDetexInstalled=$(require_cmd "detex");
+
+if [ -z "$isDetexInstalled" ]; then 
+	detex "$TM_DIRECTORY"/"$TM_FILENAME" | wc -w;
+	else 
+	echo "detex is not installed.";
+	exit 1
+fi</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>@I</string>
+	<key>name</key>
+	<string>Count words</string>
+	<key>output</key>
+	<string>showAsTooltip</string>
+	<key>scope</key>
+	<string>text.tex.latex</string>
+	<key>uuid</key>
+	<string>46611B20-80E0-4DB7-8133-E39CCBF6F841</string>
+</dict>
+</plist>
